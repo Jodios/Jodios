@@ -47,7 +47,7 @@ jobs:
       - name: Replace tokens
         uses: cschleiden/replace-tokens@v1.0
         with:
-          files: ./React_Client/kube.yaml
+          files: ./jodios/kube.yaml
         env:
           deployment.image.name: ${{ secrets.DOCKERHUB_USERNAME }}/jodios:${{ github.run_id }}
 
