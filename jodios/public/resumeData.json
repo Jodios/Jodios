@@ -90,25 +90,25 @@
       {
         "title": "TOGI",
         "category": "My Travel Blog for my post-university travels",
-        "image": "togi.png",
+        "image": "togii.png",
         "url": "https://thetogi.firebaseapp.com/"
       },
       {
         "title": "Jodios",
         "category": "(offline now) A fighting gear company I started",
-        "image": "jodios.png",
+        "image": "jodioss.png",
         "url": "http://github.com/jodios/jodios/tree/master/jodios"
       },
       {
         "title": "PiLights",
         "category": "Website I built for a restaurant I like in Thailand",
-        "image": "pilights.png",
+        "image": "pilightss.png",
         "url": "https://github.com/Jodios/PiLights"
       },
       {
         "title": "JodiosTestBot",
         "category": "(offline now) A fighting gear company I started",
-        "image": "jodiostestbot.png",
+        "image": "jodiostestbott.png",
         "url": "https://github.com/Jodios/jodiostestbot"
       }
     ]
