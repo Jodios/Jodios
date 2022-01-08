@@ -2,23 +2,8 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import './index.css'
 import reportWebVitals from './reportWebVitals'
+import Home from './pages/home'
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
-
-class TTT extends React.Component {
-  render(){
-    return(
-      <div>SORRY... UNDER CONSTRUCTION</div>
-    )
-  }
-}
-
-class TESTINGROUTE extends React.Component {
-  render(){
-    return(
-      <div>IN TESTING YAY :)</div>
-    )
-  }
-}
 
 class App extends React.Component {
 
@@ -26,8 +11,7 @@ class App extends React.Component {
     return (
       <Router>
         <Routes>
-          <Route path="/" element={<TTT/>} />
-          <Route path="/test" element={<TESTINGROUTE/>} />
+          <Route path="/" element={<Home/>} />
         </Routes>
       </Router>
     )
