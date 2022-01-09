@@ -31,7 +31,7 @@
     ]
   },
   "resume": {
-    "skillmessage": "I work with kubernetes and Docker on a daily basis. This website is actually hosting on my cluster running on Linode. Taking on personal projects with GoLang to better understand it, as it's a very helpful language when it comes to the cloud.",
+    "skillmessage": "I work with kubernetes and Docker on a daily basis. This website is actually hosted on my cluster running on Linode. Taking on personal projects with GoLang to better understand it, as it's a very helpful language when it comes to the cloud.",
     "education": [
       {
         "school": "Tarleton State University",
