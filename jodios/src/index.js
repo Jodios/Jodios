@@ -3,17 +3,22 @@ import ReactDOM from 'react-dom'
 import './index.css'
 import reportWebVitals from './reportWebVitals'
 import Home from './pages/home'
+import Howdy from './pages/howdy'
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
 
 class App extends React.Component {
 
   render() {
     return (
-      <Router>
-        <Routes>
-          <Route path="/" element={<Home/>} />
-        </Routes>
-      </Router>
+      <div>
+        HELLO
+        <Router>
+          <Routes>
+            <Route path="/" element={<Home/>} />
+            <Route path="/testing" element={<Howdy/>} />
+          </Routes>
+        </Router>
+      </div>
     )
   }
 
