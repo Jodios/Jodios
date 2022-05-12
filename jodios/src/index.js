@@ -1,27 +1,27 @@
-import React from 'react'
-import ReactDOM from 'react-dom'
-import './index.css'
-import reportWebVitals from './reportWebVitals'
-import Home from './pages/home'
-import Howdy from './pages/howdy'
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
+import React, {useState} from 'react';
+import ReactDOM from 'react-dom';
+import './index.css';
+import reportWebVitals from './reportWebVitals';
+import Home from './pages/home';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
-class App extends React.Component {
-
-  render() {
-    return (
-      <div>
-        HELLO
-        <Router>
-          <Routes>
-            <Route path="/" element={<Home/>} />
-            <Route path="/testing" element={<Howdy/>} />
-          </Routes>
-        </Router>
-      </div>
-    )
+const App = () => {
+  const [name, setName] = useState("")
+  const nameChangeHandler = (event) => {
+    event.preventDefault();
+    setName(event.target[0].value);
+    event.target.reset();
   }
 
+  return (
+    <div>
+      <Router>
+        <Routes>
+          <Route path="/" element={<Home name={name} nameChangeHandler={nameChangeHandler}/>} />
+        </Routes>
+      </Router>
+    </div>
+  )
 
 }
 

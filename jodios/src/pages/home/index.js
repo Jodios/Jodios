@@ -1,21 +1,16 @@
-import React from "react";
-import {useNavigate} from "react-router-dom";
+import "./home.css";
 
-const Home = () => {
-
-    const navigate = useNavigate();
-
-    const doSomething = (event) => {
-        console.log("Hello");
-        navigate('/testing');
-    }
+const Home = (props) => {
 
     return(
         <div className="App">
-            <p id="message">
-                will be back...
-                <button onClick={doSomething}>Testing</button>
-            </p>
+            <span className="material-symbols-outlined bunny">
+                cruelty_free
+            </span>
+            <br/>
+            <span className="will-be-back">
+                will be back
+            </span>
         </div>
     )
 
