@@ -1,0 +1,16 @@
+@use '../scss' as *;
+
+.Nav {
+    position: relative;
+    z-index: 100000;
+    color: $jds-secondary-text-color;
+    background-color: $jds-secondary-background-color;
+    // border: solid greenyellow;
+    border-bottom: solid $jds-main-background-color;
+    #enabledLink {
+        color: $jds-secondary-text-color;
+    }
+    #disabledLink {
+        color: $jds-disabled-text-color;
+    }
+}

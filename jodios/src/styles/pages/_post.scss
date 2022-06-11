@@ -1,0 +1,68 @@
+@use '../scss/' as *;
+
+.Post{
+    background-color: $jds-secondary-background-color;
+    color: $jds-main-text-color;
+    #coverImage {
+        margin-top: $jds-rem-1;
+        width: 100%;
+        img {
+            width: 100%;
+        }
+    }
+    #imageLoader {
+        display: flex;
+    }
+    #content{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 100%;
+        #header {
+            margin-top: $jds-rem-1;
+            margin-bottom: $jds-rem-2;
+            #title {
+                text-align: left;
+                font-size: $jds-large-font;
+                font-weight: $jds-title-weight;
+            }
+
+        }
+        p {
+            text-align: center;
+            img {
+                max-width: 100%;
+                min-width: 40%;
+                border-radius: 1%;
+            }
+        }
+        .remark-highlight pre{
+            border-radius: 1% !important;
+        }
+    }
+    #postContentLoader {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-top: 1rem;
+        width: 100%;
+        #postContentSkeleton{
+            width: 70%;
+            margin-bottom: 1rem;
+        }
+        #postContentSkeletonEnd {
+            width: 50%;
+            margin-bottom: 1rem;
+        }
+    }
+
+    @media only screen and (max-width: 800px) {
+        #postContentLoader {
+            #postContentSkeleton{
+                width: 90%;
+                margin-bottom: 1rem;
+            }
+        }
+    }
+
+}

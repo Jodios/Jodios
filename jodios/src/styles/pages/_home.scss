@@ -1,0 +1,164 @@
+@use '../scss' as *;
+
+.Home {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    #upperHalf {
+        background-color: $jds-secondary-background-color;
+        width: 100%;
+        height: 50vh;
+        #title {
+            display: flex;
+            justify-content: center;
+            font-family: $jds-main-title-font;
+            left: 50%;
+            transform: translate(-50%, 60%);
+            font-size: $jds-xxlarge-font;
+            position: relative;
+            color: $jds-main-background-color;
+            border: solid $jds-main-background-color;
+            min-width: 50%;
+            max-width: 70%;
+        }
+    }
+    #homeNav {
+        position: -webkit-sticky;
+        position:sticky;
+        top: 0;
+        width: 100%;
+        z-index: 10000;
+    }
+    #content{
+        background-color: $jds-secondary-background-color;
+        position: relative;
+        padding: $jds-rem-1;
+        #intro {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            #profilePicture {
+                width: 100%;
+                text-align: center;
+                img {
+                    border-radius: 50%;
+                    width: 100%;
+                }
+            }
+            #links {
+                margin-top: 2rem;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                width: 100%;
+                #link {
+                    font-size: $jds-medium-font;
+                    :hover {
+                        cursor: pointer;
+                    }
+                }
+            }
+            #interests {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                width: 100%;
+                margin-top: $jds-rem-1;
+                #interest {
+                    margin-right: .5rem;
+                    margin-bottom: .5rem;
+                }
+            }
+            #interestLoader, #profileLoader {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                #interestSkeleton {
+                    margin: 1rem;
+                }
+            }
+            #profileLoader {
+                width: 50%;
+                height: 50vh;
+                #profilePictureSkeleton {
+                    width: 100%;
+                    height: 95%;
+                    margin-bottom: 1rem;
+                }
+                #profileBioSkeleton {
+                    width: 100%;
+                    height: 5%;
+                    margin-bottom: 1rem;
+                }
+            }
+        }
+        #breaker {
+            width: 122%;
+            transform: translateX(-10%);
+            border: solid $jds-main-background-color;
+        }
+        #aboutMe{
+            margin-top: 1rem;
+            #aboutMeLoader {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                #aboutMeSkeleton {
+                    width: 70%;
+                    margin-bottom: 1rem;
+                }
+                #aboutMeSkeletonEnd {
+                    width: 50%;
+                    margin-bottom: 1rem;
+                }
+            }
+        }
+    }
+
+    // for phones
+    @media only screen and (max-width: 800px) {
+        #upperHalf {
+            display: none;
+        }
+        #content{
+            margin-left: $jds-rem-0;
+            margin-right: $jds-rem-0;
+            width: 100%;
+            background-color: $jds-secondary-background-color;
+            #intro {
+                margin-bottom: $jds-rem-1;
+                #profilePicture {
+                    text-align: center;
+                    width: 100%;
+                }
+                #interests {
+                    width: 100%;
+                    margin-top: $jds-rem-1;
+                }
+                #profileLoader {
+                    width: 100%;
+                    #profilePictureSkeleton {
+                        width: 100%;
+                        height: 90%;
+                    }
+                    #profileBioSkeleton {
+                        width: 100%;
+                        height: 10%;
+                    }
+                }
+            }
+            #aboutMe{
+                width: 80vw;
+                // padding: .1rem;
+                #aboutMeLoader {
+                    #aboutMeSkeleton {
+                        width: 100%;
+                    }
+                }
+        }
+        }
+    }
+
+
+}

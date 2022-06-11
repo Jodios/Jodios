@@ -1,0 +1,20 @@
+@use '../scss' as *;
+
+.JCard {
+    background-color: $jds-secondary-background-color !important;
+    color: $jds-main-text-color !important;
+    width: 40%;
+    margin: $jds-rem-1;
+    #link:hover{
+        cursor: pointer;
+    }
+
+    #tag {
+        margin-right: 6px;
+    }
+
+    @media only screen and (max-width: 800px) {
+        width: 100%;
+    }
+
+}

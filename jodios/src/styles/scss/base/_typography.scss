@@ -1,0 +1,8 @@
+@use '../abstracts' as *;
+@import url('https://fonts.googleapis.com/css2?family=Parisienne&family=Sacramento&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Parisienne&family=Sacramento&display=swap');
+
+.jds-body-small {
+    font-family: $ibm-mono;
+    font-size: $jds-small-font;
+}

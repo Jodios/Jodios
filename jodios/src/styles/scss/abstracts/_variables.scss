@@ -1,0 +1,43 @@
+// COLORS
+$jds-main-background-color: #1D1F21;
+$jds-secondary-background-color: #282a2e;
+$jds-main-text-color: #c5c8c6;
+$jds-secondary-text-color: #b294bb;
+$jds-disabled-text-color: #1D1F21;
+
+// FONT SIZES
+$jds-small-icon: 16px;
+$jds-medium-icon: 32px;
+$jds-large-icon: 64px;
+$jds-xlarge-icon: 128px;
+$jds-xxlarge-icon: 256px;
+$jds-small-font: 16px;
+$jds-medium-font: 32px;
+$jds-large-font: 64px;
+$jds-xlarge-font: 128px;
+$jds-xxlarge-font: 256px;
+
+// Font Weights
+$jds-title-weight: 900;
+
+// rem values
+$jds-rem-0: 0rem;
+$jds-rem-1: 2rem;
+$jds-rem-2: 4rem;
+$jds-rem-3: 8rem;
+$jds-rem-4: 16rem;
+$jds-rem-5: 32rem;
+$jds-rem-6: 64rem;
+
+// FONT FAMILIES
+$fira-mono: 'Fira Mono', monospace;
+$parisienne: 'Parisienne', cursive;
+$ibm-mono: 'IBM Plex Mono', monospace;
+$vt23: 'VT323', monospace;
+$jds-main-font: $fira-mono;
+$jds-main-title-font: $vt23;
+
+// ANIMATION SPEEDS 
+$jds-transition-high-speed: 500ms;
+$jds-transition-medium-speed: 1000ms;
+$jds-transition-slow-speed: 1500ms;

@@ -1,0 +1,32 @@
+@use '../abstracts' as *;
+
+.mdContent {
+    // border: solid green;
+    padding: 1rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    pre {
+        padding: 1rem;
+        border-radius: .5rem;
+        background-color: $jds-main-background-color;
+        margin-left: auto;
+        margin-right: auto;
+        overflow: auto;
+        width: 100%;
+        font-family: $parisienne;
+        // display:contents;
+        // font-size: 1rem;
+        code {
+            font-family: $ibm-mono;
+            width: 50%;
+            // color: black;
+            // border: solid pink;
+        }
+    }
+
+    @media only screen and (max-width: 800px) {
+        padding: .5rem;
+    }
+
+}
