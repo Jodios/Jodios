@@ -24,3 +24,33 @@
         }
     }
 }
+#tagSelector {
+    margin-top: 1rem;
+    margin-left: auto;
+    margin-right: auto;
+    width: 40%;
+    color: white !important;
+
+    .MuiAutocomplete-root {
+        // background-color: white;
+        margin-top: 2rem;
+        padding: 1rem;
+        background-color: $jds-secondary-background-color !important;
+        border-radius: .5rem;
+        .MuiButtonBase-root {
+            background-color: rgba($jds-main-text-color, .2);
+            color: $jds-main-text-color;
+            .MuiSvgIcon-root {
+                color: $jds-main-text-color;
+            }
+            margin-right: .2rem;
+        }
+        .MuiInputLabel-root {
+            color: $jds-main-text-color;
+        }
+    }
+    @media only screen and (max-width: $jds-small-screen-width) {
+        width: 90%;
+    }
+
+}

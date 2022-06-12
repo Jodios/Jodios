@@ -18,12 +18,7 @@ body {
   padding: 0;
   margin: 0;
   font-family: $jds-main-font;
-  color: $jds-main-text-color;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
+  color: $jds-main-text-color !important;
 }
 
 * {

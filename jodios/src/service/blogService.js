@@ -71,3 +71,20 @@ export const getPost = async (slug) => {
     });
   });
 };
+
+export const getTags = async () => {
+  const query = gql`
+    query MyQuery {
+      tags {
+        tag
+      }
+    }
+  `;
+  return new Promise((resolve, reject) => {
+    client.query({ query }).then(data => {
+      resolve(data.data.tags);
+    }).catch(error => {
+      reject(error);
+    });
+  });
+};

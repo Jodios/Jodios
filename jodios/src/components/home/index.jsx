@@ -54,7 +54,7 @@ const Home = ({ setShowNav, value, setValue }) => {
                             </Typography>
                         }
                         <Stack direction='row' spacing={1} id="links">
-                            <a href='https://www.github.com/jodios' rel='noreferrer' target='_blank'><GitHubIcon id='link' /></a>
+                            <a href='https://www.github.com/jodios' rel='noreferrer' target='_blank'><GitHubIcon href='' id='link' /></a>
                             <a href='https://www.linkedin.com/in/joel-ortiz-a3460ba3/' rel='noreferrer' target='_blank'><LinkedInIcon id='link' /></a>
                             <a href="mailto: joelandapophis@gmail.com"><EmailIcon id='link' /></a>
                         </Stack>
