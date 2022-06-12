@@ -9,7 +9,7 @@ import remarkParse from 'remark-parse';
 
 const JDSRehype = ({content}) => {
 
-    const [parsedContent, setParsedContent] = useState(<div class='mdContent'></div>);
+    const [parsedContent, setParsedContent] = useState(<div className='mdContent'></div>);
     useEffect(() => {
         unified()
         .use(remarkParse)
@@ -20,7 +20,7 @@ const JDSRehype = ({content}) => {
         .process(content)
         .then((res) => {
             setParsedContent(
-                <div class='mdContent'>{res.result}</div>
+                <div className='mdContent'>{res.result}</div>
             );
         });
 
