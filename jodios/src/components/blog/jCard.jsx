@@ -35,7 +35,7 @@ const JCard = ({slug, publishedAt, tags, title, authors, coverImage}) => {
           </div>
           <br/>
           {tags.map(tag => 
-            <Chip label={tag} color="primary" variant="outlined" id="tag" key={tag}/>
+            <Chip label={tag.tag} color="primary" variant="outlined" id="tag" key={tag.tag}/>
           )}
         </CardContent>
         <CardActions id='cardFooter'>

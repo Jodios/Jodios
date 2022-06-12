@@ -6,7 +6,7 @@ import { Link, matchPath, useLocation } from 'react-router-dom';
 
 const links = [
     {path: '/', label:'Home', id: 0, activations: ['/']},
-    {path: '/blog', label:'Blog', id: 1, activations:['/blog/:slug', '/blog'], disabled: true},
+    {path: '/blog', label:'Blog', id: 1, activations:['/blog/:slug', '/blog'], disabled: false},
     {path: '/photography', label:'Photography', id: 2, activations:['/photography/:slug', '/photography'], disabled: true}
 ];
 const useRouteMatch = (patterns) => {

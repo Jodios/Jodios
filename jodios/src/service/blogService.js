@@ -2,11 +2,19 @@ import { ApolloClient, InMemoryCache, gql } from '@apollo/client';
 
 const url = 'https://api-us-west-2.graphcms.com/v2/cl3nsb6j5481m01xi8zyq9t7l/master';
 
-const postsQuery = gql`
+const client = new ApolloClient({
+  uri: url,
+  cache: new InMemoryCache()
+});
+
+export const getPosts = async (first, skip) => {
+  const query = gql`
   query MyQuery {
-      posts {
+      posts(orderBy:publishedAt_DESC, first: ${first}, skip: ${skip}) {
         slug
-        tags
+        tags {
+          tag
+        }
         title
         publishedAt
         authors {
@@ -22,20 +30,13 @@ const postsQuery = gql`
       }
     }
   `;
-
-const client = new ApolloClient({
-    uri: url,
-    cache: new InMemoryCache()
-});
-
-export const getPosts = async () => {
-    return new Promise((resolve, reject) => {
-        client.query({query: postsQuery}).then(data => {
-            resolve(data.data.posts);
-        }).catch(error => {
-            reject(error);
-        });
+  return new Promise((resolve, reject) => {
+    client.query({ query: query }).then(data => {
+      resolve( data.data.posts );
+    }).catch(error => {
+      reject(error);
     });
+  });
 };
 
 export const getPost = async (slug) => {
@@ -54,17 +55,19 @@ export const getPost = async (slug) => {
       content
       publishedAt
       slug
-      tags
+      tags {
+        tag
+      }
       title
       updatedAt
     }
   }
     `;
-    return new Promise((resolve, reject) => {
-        client.query({query: postQuery}).then(data => {
-            resolve(data.data.post);
-        }).catch(error => {
-            reject(error);
-        });
+  return new Promise((resolve, reject) => {
+    client.query({ query: postQuery }).then(data => {
+      resolve(data.data.post);
+    }).catch(error => {
+      reject(error);
     });
+  });
 };

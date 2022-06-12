@@ -3,8 +3,24 @@
 .Blog {
     display: flex;
     flex-wrap: wrap;
+    align-items: center;
     justify-content: center;
+    .JCard {
+        // border: solid pink;
+        width: 100%;
+    }
+
+    // for wide screens
+    @media only screen and (min-width: 1800px) {
+        .JCard{
+            width: 40%;
+        }
+        padding: 3rem;
+    }
+    // for small screens
     @media only screen and (max-width: 800px) {
-        // padding: 0;
+        padding: 0;
+        .JCard{
+        }
     }
 }

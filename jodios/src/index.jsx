@@ -29,20 +29,20 @@ const App = () => {
   const [showNav, setShowNav] = useState(true);
 
   return (
-    // <React.StrictMode>
-    <div>
-      <Router>
-        { showNav && <Nav/> }
-        <Routes>
-          <Route path='/' element={<Home setShowNav={setShowNav}/>}/>
-          <Route path='/blog' element={<Blog/>}/>
-          <Route path='/blog/:slug' element={<Post/>}/>
-          <Route path='/photography' element={<Blog/>}/>
-          <Route path='/photography/:slug' element={<Post/>}/>
-        </Routes>
-      </Router>
-    </div>
-    // </React.StrictMode>
+    //<React.StrictMode>
+      <div>
+        <Router>
+          { showNav && <Nav/> }
+          <Routes>
+            <Route path='/' element={<Home setShowNav={setShowNav}/>}/>
+            <Route path='/blog' element={<Blog/>}/>
+            <Route path='/blog/:slug' element={<Post/>}/>
+            <Route path='/photography' element={<Blog/>}/>
+            <Route path='/photography/:slug' element={<Post/>}/>
+          </Routes>
+        </Router>
+      </div>
+    //</React.StrictMode>
   );
 };
 
