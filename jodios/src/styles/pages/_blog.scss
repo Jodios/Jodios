@@ -11,14 +11,14 @@
     }
 
     // for wide screens
-    @media only screen and (min-width: 1800px) {
+    @media only screen and (min-width: $jds-wide-screen-width) {
         .JCard{
             width: 40%;
         }
         padding: 3rem;
     }
     // for small screens
-    @media only screen and (max-width: 800px) {
+    @media only screen and (max-width: $jds-small-screen-width) {
         padding: 0;
         .JCard{
         }

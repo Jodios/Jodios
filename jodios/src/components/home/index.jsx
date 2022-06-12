@@ -1,9 +1,6 @@
-import Chip from '@mui/material/Chip';
-import Stack from '@mui/material/Stack';
-import Skeleton from '@mui/material/Skeleton';
-import Typography from '@mui/material/Typography';
+import { Chip, Stack, Skeleton, Typography } from '@mui/material';
 import { getAuthor } from '../../service/authorService';
-import GitHubIcrom from '@mui/icons-material/GitHub';
+import GitHubIcon from '@mui/icons-material/GitHub';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import EmailIcon from '@mui/icons-material/Email';
 import JDSRehype from '../common/jdsRehype';
@@ -57,7 +54,7 @@ const Home = ({ setShowNav, value, setValue }) => {
                             </Typography>
                         }
                         <Stack direction='row' spacing={1} id="links">
-                            <a href='https://www.github.com/jodios' rel='noreferrer' target='_blank'><GitHubIcrom id='link' /></a>
+                            <a href='https://www.github.com/jodios' rel='noreferrer' target='_blank'><GitHubIcon id='link' /></a>
                             <a href='https://www.linkedin.com/in/joel-ortiz-a3460ba3/' rel='noreferrer' target='_blank'><LinkedInIcon id='link' /></a>
                             <a href="mailto: joelandapophis@gmail.com"><EmailIcon id='link' /></a>
                         </Stack>

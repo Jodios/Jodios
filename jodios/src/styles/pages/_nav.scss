@@ -13,4 +13,59 @@
     #disabledLink {
         color: $jds-disabled-text-color;
     }
+    #smallNav {
+        display: none;
+        .MuiToolbar-root {
+            background-color: $jds-secondary-background-color;
+            color: $jds-main-text-color;
+        }
+        .slideInMenu {
+            background-color: $jds-secondary-background-color;
+        }
+        .slideInMenuOverlay {
+            background-color: $jds-secondary-background-color;
+        }
+    }
+    #normalNav {
+        display: block;
+    }
+    @media only screen and (max-width: $jds-small-screen-width) {
+        #smallNav {
+            display: flex;
+        }
+        #normalNav {
+            display: none;
+        }
+    }
 }
+.slideInMenu {
+    background-color: $jds-main-background-color;
+}
+.slideInMenuOverlay {
+    color: $jds-main-font;
+    .slide-pane__close {
+        display: flex;
+    }
+    .slide-pane__header {
+        background-color: $jds-secondary-background-color;
+    }
+}
+
+.MuiDrawer-paperAnchorLeft {
+    color: $jds-main-text-color !important;
+    background-color: $jds-secondary-background-color !important;
+    width: 50%;
+    .MuiList-root {
+        display: flex;
+        flex-direction: column;
+        .MuiListItem-root {
+            display: flex;
+            justify-content: center;
+            .MuiListItemButton-root{
+                text-align: center;
+                width: 50vw;
+            }
+        }
+    }
+}
+

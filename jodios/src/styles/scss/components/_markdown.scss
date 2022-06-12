@@ -25,7 +25,7 @@
         }
     }
 
-    @media only screen and (max-width: 800px) {
+    @media only screen and (max-width: $jds-small-screen-width) {
         padding: .5rem;
     }
 

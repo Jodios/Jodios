@@ -28,7 +28,6 @@ const Blog = () => {
         setPage(page+1);
     };
 
-
     return (
         <>
             {posts && posts.length > 0 && 
