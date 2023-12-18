@@ -1,0 +1,46 @@
+@use './variables.scss' as *;
+
+@mixin animate($animation, $duration, $method, $times) {
+    animation: $animation $duration $method $times;
+}
+
+@mixin keyframes($name) {
+    @keyframes #{$name} {
+        @content;
+    }
+}
+
+@mixin setbackground($thickness, $percentage, $offset) {
+    background:
+        linear-gradient(to right, $secondaryColor $thickness, transparent $thickness) $offset $offset,
+        linear-gradient(to right, $secondaryColor $thickness, transparent $thickness) $offset $percentage,
+        linear-gradient(to left, $secondaryColor $thickness, transparent $thickness) $percentage $offset,
+        linear-gradient(to left, $secondaryColor $thickness, transparent $thickness) $percentage $percentage,
+        linear-gradient(to bottom, $secondaryColor $thickness, transparent $thickness) $offset $offset,
+        linear-gradient(to bottom, $secondaryColor $thickness, transparent $thickness) $percentage $offset,
+        linear-gradient(to top, $secondaryColor $thickness, transparent $thickness) $offset $percentage,
+        linear-gradient(to top, $secondaryColor $thickness, transparent $thickness) $percentage $percentage;
+    background-repeat: no-repeat;
+    background-size: 80px 80px;
+    background-color: $primaryColor;
+}
+
+@include keyframes(fade) {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@include keyframes(corners) {
+    0% {
+        @include setbackground(9px, 50%, 50%)
+    }
+
+    100% {
+        @include setbackground(9px, 100%, 0%)
+    }
+}

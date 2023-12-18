@@ -1,0 +1,119 @@
+@use '../styles' as *;
+
+.Post {
+    text-align: left;
+
+    #heading {
+        text-align: center;
+
+        h1 {
+            font-size: 3em;
+        }
+
+        img {
+            width: 50%;
+        }
+
+        #File {
+            display: flex;
+            align-items: center;
+            color: $fileColor;
+            margin-top: 10px;
+        }
+
+        #File:hover {
+            cursor: pointer;
+        }
+
+        #createdDate {
+            width: fit-content;
+            display: flex;
+            align-items: center;
+            align-content: center;
+            justify-content: center;
+        }
+    }
+
+    #divider {
+        margin-top: 3%;
+        border-top: solid rgba($secondaryColor, .5);
+    }
+
+    h3,
+    h4,
+    h2 {
+        border-bottom: 5px solid rgba($secondaryColor, .9);
+        width: fit-content;
+    }
+
+    #sectionContent {
+        height: 65%;
+        width: 68.5%;
+        overflow: scroll;
+    }
+
+    blockquote {
+        border-radius: 5px;
+        padding-left: 10px;
+        border-left: 6px solid rgba($secondaryColor, .5);
+    }
+
+    pre {
+        code {
+            font-family: 'MapleRegular' !important;
+            font-size: 1em !important;
+            background-color: rgba($secondaryColor, 0) !important;
+            box-shadow: -.3em 0 0 .3em rgba($secondaryColor, 0), .3em 0 0 .3em rgba($secondaryColor, 0) !important;
+        }
+
+        border: solid $secondaryColor;
+        border-radius: 1%;
+        background: none !important;
+        background-color: rgba($secondaryColor, .2) !important;
+    }
+
+    img {
+        max-width: 100%;
+    }
+
+    @media only screen and (max-width: 600px) {
+        #sectionContent {
+            height: 89%;
+            width: 90%;
+        }
+
+        #heading {
+            margin-top: 50px;
+
+            h1 {
+                font-size: 1.5em;
+            }
+
+            #createdDate {
+                #icon {
+                    font-size: 15px !important;
+                }
+
+                font-size: .8em !important;
+            }
+
+            #File {
+                display: none;
+            }
+        }
+
+        pre {
+            code {
+                font-family: 'MapleRegular' !important;
+                font-size: .7em !important;
+                background-color: rgba($secondaryColor, 0) !important;
+                box-shadow: -.3em 0 0 .3em rgba($secondaryColor, 0), .3em 0 0 .3em rgba($secondaryColor, 0) !important;
+            }
+        }
+
+        h3,
+        h4 {
+            border-bottom: 5px solid $secondaryColor;
+        }
+    }
+}

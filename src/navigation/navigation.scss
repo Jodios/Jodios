@@ -1,0 +1,29 @@
+@use '../styles' as *;
+
+.Navigation {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    z-index: 10000000;
+    background-color: $primaryColor;
+    height: 50px;
+    ul {
+        padding: 0;
+        width: 70%;
+        display: flex;
+        list-style: none;
+
+        li {
+            margin-right: 10px;
+            margin-left: none;
+        }
+    }
+
+    @media only screen and (max-width: 600px) {
+        ul {
+            width: 90%;
+        }
+    }
+
+}

@@ -1,0 +1,82 @@
+@use './styles' as *;
+
+body, html, #root {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+*::-webkit-scrollbar {
+  display: none !important;
+}
+
+body {
+  background-color: $primaryColor;
+  color: $secondaryColor;
+  font-family: 'PlayfairDisplay';
+  font-size: 1.2em;
+  overflow: hidden;
+  -ms-overflow-style: none !important;  /* IE and Edge */
+  scrollbar-width: none !important;
+}
+
+.Container {
+    @include animate(fade, 1s, linear, 1);
+    text-align: center;
+    overflow: scroll;
+    overflow-x: hidden;
+    height: 100%;
+    scroll-behavior: smooth;
+    scroll-snap-points-y: repeat(100vh);
+    scroll-snap-type: y mandatory;
+    #link {
+        display: block;
+        color: $secondaryColor;
+        text-decoration: underline;
+    }
+    #link:hover{
+        text-decoration: underline double;
+        transform: translate(2px, -2px);
+    }
+    #iconLink{
+        color: $secondaryColor;
+        text-decoration: none;
+        font-size: 50px;
+        margin-right: 10px;
+    }
+    #iconLink:hover{
+        cursor: pointer;
+    }
+}
+
+section {
+  // @include animate(corners, 1s, linear, 1);
+  // @include setbackground(7px, 95%, 5%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  scroll-snap-align: start;
+  position: relative;
+  word-wrap: break-word;
+  // border: solid red;
+}
+
+#sectionContent {
+  padding: 10%;
+}
+
+@media only screen and (max-width: 600px) {
+  body {
+    font-size: 1.2em;
+  }
+  // section {
+  //   @include animate(corners, 1s, linear, 1);
+  //   @include setbackground(7px, 100%, 0%);
+  // }
+}
+
+a {
+  color: $linkColor;
+}
