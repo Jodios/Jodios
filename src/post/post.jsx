@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Box, Divider } from '@mui/material';
 import { useParams } from 'react-router-dom';
 import { gql, useQuery } from '@apollo/client';
@@ -13,6 +13,7 @@ import rehypeKatex from 'rehype-katex';
 import 'katex/dist/katex.min.css';
 import { logEvent } from 'firebase/analytics';
 import { analytics } from '../firebase';
+import remarkGfm from 'remark-gfm';
 
 import './post.scss';
 
@@ -46,7 +47,7 @@ const Post = () => {
     const { loading, error, data } = useQuery(postQuery(slug));
 
     const download = (url, name) => {
-        logEvent(analytics, "file_download", {"description": `downloading ${name} from ${slug}`})
+        logEvent(analytics, "file_download", { "description": `downloading ${name} from ${slug}` })
         fetch(url)
             .then(response => response.blob())
             .then(blob => {
@@ -63,7 +64,7 @@ const Post = () => {
     }
 
     if (error) {
-        logEvent(analytics, "exception", {"description": `failed to load post: ${slug}`})
+        logEvent(analytics, "exception", { "description": `failed to load post: ${slug}` })
         return (
             <div className='Post Container'>
                 <section>
@@ -88,6 +89,29 @@ const Post = () => {
         )
     }
 
+    const generateSlug = (string) => {
+        let str = string.replace(/^\s+|\s+$/g, "");
+        str = str.toLowerCase();
+        str = str
+            .replace(/[^a-z0-9 -]/g, "")
+            .replace(/\s+/g, "-")
+            .replace(/-+/g, "-");
+        const heading = {
+            title: string,
+            href: str,
+        };
+        
+        return str;
+    };
+
+    const tableOfConent = [...data.post.content.matchAll('(###.*|##.*)')].map(result => {
+        const heading = result[0].replace("###", "").replace("##", "").trim();
+        const href = `#${generateSlug(heading)}` 
+        return (
+            <li id="tocItem"><a href={href}>{heading}</a></li>
+        );
+    });
+
     return (
         <Box className='Post Container'>
             <section>
@@ -101,16 +125,22 @@ const Post = () => {
                             <PermIdentityIcon sx={{ marginLeft: 2 }} id="icon" />
                             {data.post.authors[0].name}
                         </Box>
-                        {data.post.files.length > 0 && data.post.files.map((file, i) =>
-                            <Box key={i} id="File">
-                                <FolderOpenIcon />
-                                <Box onClick={()=>(download(file.url, file.fileName))}>{file.fileName}</Box>
-                            </Box>
-                        )}
+                        <Box id="Files">
+                            {data.post.files.length > 0 && data.post.files.map((file, i) =>
+                                <Box key={i} id="File">
+                                    <FolderOpenIcon />
+                                    <Box onClick={() => (download(file.url, file.fileName))}>{file.fileName}</Box>
+                                </Box>
+                            )}
+                        </Box>
                     </Box>
                     <Divider id="divider" />
+                    <Box id='toc'>
+                        <h2>Table of content</h2>
+                        <ul>{tableOfConent}</ul>
+                    </Box>
                     <Markdown
-                        remarkPlugins={[remarkMath]}
+                        remarkPlugins={[remarkMath, remarkGfm]}
                         rehypePlugins={[rehypeKatex]}
                         children={data.post.content}
                         components={{
@@ -130,7 +160,13 @@ const Post = () => {
                                         {children}
                                     </code>
                                 )
-                            }
+                            },
+                            h3: ({ node, ...props }) => {
+                                return <h3 id={generateSlug(props.children)} {...props}></h3>
+                            },
+                            h2: ({ node, ...props }) => {
+                                return <h2 id={generateSlug(props.children)} {...props}></h2>
+                            },
                         }}
                     />
                 </Box>
