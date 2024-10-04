@@ -1,0 +1,38 @@
+package web
+
+import "github.com/jodios/web/components"
+
+templ Home(names []string) {
+	@index() {
+		<div class="flex flex-col h-screen items-center justify-center" hx-swap="none">
+			<h1
+				id="jodios-header"
+                hx-swap="textContent"
+				hx-get="/download/re-trigger"
+				hx-trigger="download-done-trigger from:body"
+				class="text-3xl font-sans font-['Fredoka']"
+			></h1>
+			<table class="table-auto">
+				<thead>
+					<tr>
+						<th>Name</th>
+					</tr>
+				</thead>
+				<tbody>
+					for _, name := range names {
+						<tr>
+							<td>{ name }</td>
+						</tr>
+					}
+				</tbody>
+			</table>
+			@components.LoaderButton(components.LoaderButtonProps{
+				ID:          "download-button",
+				HXGET:       "/download",
+				ButtonText:  "Checkout",
+				LoadingText: "Processing...",
+				HXTARGET:    "#jodios-header",
+			})
+		</div>
+	}
+}

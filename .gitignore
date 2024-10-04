@@ -1,0 +1,5 @@
+firebase.json
+.env
+*_templ.go
+tmp
+build
